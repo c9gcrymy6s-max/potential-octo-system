@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>0783 · 城北工业区</title>
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<div id="game-root">
+
+    <div id="three-container"></div>
+
+    <div id="crosshair">
+        <div class="ch-dot"></div>
+    </div>
+
+    <div id="interact-hint" class="hidden">
+        <span id="interact-key">E</span>
+        <span id="interact-text">查看</span>
+    </div>
+
+    <div id="hud">
+        <div id="hud-left">
+            <span id="hud-scene"></span>
+        </div>
+        <div id="hud-right">
+            <span id="hud-clues" onclick="toggleInventory()">线索 0/0</span>
+            <span id="hud-light" onclick="toggleFlashlight()">🔦</span>
+        </div>
+    </div>
+
+    <div id="dialogue" class="hidden">
+        <div id="dialogue-name"></div>
+        <div id="dialogue-text"></div>
+        <div id="dialogue-more">按 E 继续</div>
+    </div>
+
+    <div id="inventory" class="hidden">
+        <div id="inventory-header">
+            <h3>线索</h3>
+            <span id="inventory-close" onclick="toggleInventory()">✕</span>
+        </div>
+        <ul id="inventory-list"></ul>
+        <div id="inventory-detail" class="hidden">
+            <div id="inventory-detail-title"></div>
+            <div id="inventory-detail-body"></div>
+            <span id="inventory-detail-back" onclick="closeInventoryDetail()">返回</span>
+        </div>
+    </div>
+
+    <div id="puzzle" class="hidden">
+        <div id="puzzle-box">
+            <h3 id="puzzle-title"></h3>
+            <p id="puzzle-hint"></p>
+            <input type="text" id="puzzle-input" autocomplete="off">
+            <div id="puzzle-error"></div>
+            <button id="puzzle-submit" onclick="submitPuzzle()">确认</button>
+            <button id="puzzle-cancel" onclick="closePuzzle()">返回</button>
+        </div>
+    </div>
+
+    <div id="docview" class="hidden">
+        <div id="docview-inner">
+            <div id="docview-close" onclick="closeDoc()">✕</div>
+            <div id="docview-content"></div>
+        </div>
+    </div>
+
+    <div id="ending" class="hidden">
+        <div id="ending-content"></div>
+    </div>
+
+    <div id="scene-fade"></div>
+
+    <div id="title-screen">
+        <div id="title-bg"></div>
+        <div id="title-main">0783</div>
+        <div id="title-sub">临江市城北工业区</div>
+        <div id="title-info">点击进入</div>
+        <div id="title-warn">本作含压抑内容 · 请谨慎游玩</div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+<script src="js/textures.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/story.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>
